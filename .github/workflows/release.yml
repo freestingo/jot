@@ -29,6 +29,7 @@ jobs:
           dotnet publish -c Release -r ${{ matrix.runtime }} \
             --self-contained true \
             /p:PublishSingleFile=true \
+            /p:IncludeNativeLibrariesForSelfExtract=true \
             -o ./publish/${{ matrix.runtime }}
 
       - name: Zip the published folder
